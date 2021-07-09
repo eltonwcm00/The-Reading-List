@@ -7,22 +7,23 @@ class Navbar extends Component {
 
     render() {
         return (
-            <ThemeContext.Consumer>{(context) => {
+            <ThemeContext.Consumer>
+                {(context) => {
                 
-                const { isLightTheme, light, dark } = context; //destructure the ThemeContext properties
-                const theme = isLightTheme ? light : dark; //light is used if isLightTheme is true
+                    const { isLightTheme, light, dark } = context; //destructure the ThemeContext properties
+                    const theme = isLightTheme ? light : dark; //light is used if isLightTheme is true
 
-                return (
-                        <nav style={ {background: theme.ui, color: theme.syntax} }> {/* accessing theme properties */}
-                            <h1>Reading List</h1>
-                            <ul>
-                                <li>Home</li>
-                                <li>About</li>
-                                <li>Contact</li>
-                            </ul>
-                        </nav> 
-                );
-            }}
+                    return (
+                            <nav style={ {background: theme.ui, color: theme.syntax} }> {/* accessing theme properties */}
+                                <h1>Reading List</h1>
+                                <ul>
+                                    <li>Home</li>
+                                    <li>About</li>
+                                    <li>Contact</li>
+                                </ul>
+                            </nav> 
+                    );
+                }}
             </ThemeContext.Consumer>
         );
     }

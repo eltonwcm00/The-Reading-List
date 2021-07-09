@@ -17,10 +17,15 @@
             bg: '#555'
         }
     }
+
+    //State from ThemeToggle
+    toggleTheme = () => {
+        this.setState( {isLightTheme: !this.state.isLightTheme} );
+    }
     
     render() {
          return (
-             <ThemeContext.Provider value={ {...this.state} }> {/* Enable the context to be shared with different components */}
+             <ThemeContext.Provider value={ {...this.state, toggleTheme: this.toggleTheme} }> {/* Enable the context to be shared with different components */}
                 {this.props.children} {/* Children = component that the context provider wraps*/}
              </ThemeContext.Provider>
          );

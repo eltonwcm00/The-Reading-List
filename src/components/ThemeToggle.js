@@ -10,7 +10,7 @@ class ThemeToggle extends Component {
         const { toggleTheme } = this.context;
 
         return(
-            <button onClick={toggleTheme}>Toggle the theme</button>
+            <button onClick={toggleTheme}>Toggle the theme</button> // consume the hook from ThemeContext.js
         );
     }
 }

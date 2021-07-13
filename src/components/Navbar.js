@@ -1,5 +1,3 @@
-/* OLD : 2nd way of consuming the context *this method can be used in functional based component too (class based component)*/
-
 import React, { useContext } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
 import { ThemeContext } from '../contexts/ThemeContext';

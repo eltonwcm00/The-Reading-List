@@ -3,16 +3,29 @@ import { BookContext } from '../contexts/BookContext';
 
 const BookForm = () => {
     
-    const { addBook } = useContext(BookContext);
+    /****** Before useReducer ******/
+    // const { addBook } = useContext(BookContext);
+    
+    /****** After useReducer ******/
+    const { dispatch } = useContext(BookContext);
 
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
 
     const handleSubmit = (e) => {
         
-        e.preventDefault();
         // console.log(title, author);
-        addBook(title, author);
+
+        e.preventDefault();
+        
+        /****** Before useReducer ******/
+        // addBook(title, author);
+       
+        /****** After useReducer ******/
+        dispatch( {type: 'ADD_BOOK', book: {
+            title,
+            author
+        }} );
         
         setTitle('');
         setAuthor('');
